@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="pt-BR" data-theme="night">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Plantão Jaru — farmácia de plantão agora</title>
+<meta name="description" content="Qual farmácia está de plantão agora em Jaru–RO, com endereço e como chegar. Escala oficial da Prefeitura de Jaru.">
+<meta name="theme-color" content="#0f0f0e">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect x='3' y='5' width='26' height='22' rx='2' fill='%23141414'/%3E%3Crect x='3' y='12' width='26' height='7' fill='%23f5c400'/%3E%3C/svg%3E">
+<link rel="preload" href="fonts/archivo-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="style.css">
+<script>
+  // Tema pela hora de Jaru antes da primeira pintura (noite das 18h às 7h).
+  (function () {
+    var h = new Date().getUTCHours() - 4;
+    var m = location.search.match(/agora=\d{4}-\d{2}-\d{2}T(\d{2})/);
+    if (m) h = +m[1];
+    h = (h + 24) % 24;
+    var night = h >= 18 || h < 7;
+    var root = document.documentElement;
+    root.dataset.theme = night ? "night" : "day";
+    root.classList.add("js");
+    document.querySelector('meta[name="theme-color"]').content = night ? "#0f0f0e" : "#e6e3dc";
+  })();
+</script>
+</head>
+<body>
+
+<header class="bar">
+  <a class="mark" href="./" aria-label="Plantão Jaru, início">
+    <svg viewBox="0 0 28 22" aria-hidden="true"><rect x="1" y="1" width="26" height="20" rx="1.5"/><rect class="mark-band" x="1" y="8" width="26" height="6"/></svg>
+    <span>Plantão Jaru</span>
+  </a>
+  <p class="clock"><time id="clock">--:--</time> em Jaru</p>
+  <a class="bar-link" href="#escala">Escala do mês</a>
+</header>
+
+<main>
+  <noscript>
+    <p class="noscript">Para ver a farmácia de plantão agora, ative o JavaScript, ou consulte a escala oficial no <a href="https://jaru.ro.gov.br">site da Prefeitura de Jaru</a>.</p>
+  </noscript>
+
+  <section class="now" aria-labelledby="name">
+    <article class="box" id="box" data-state="open">
+      <div class="tarja" id="tarja">
+        <strong id="state-label">Aberta agora</strong>
+        <span id="state-until">até 07:00</span>
+      </div>
+
+      <div class="box-body">
+        <h1 class="name" id="name"><span class="name-pre">Farmácia</span> <span class="name-main">carregando</span></h1>
+        <p class="addr" id="addr">&nbsp;</p>
+        <p class="strength" id="strength">&nbsp;</p>
+        <dl class="lot" id="lot">
+          <div><dt>Início</dt><dd id="lot-start">&nbsp;</dd></div>
+          <div><dt>Fim</dt><dd id="lot-end">&nbsp;</dd></div>
+        </dl>
+
+        <div class="actions" id="actions">
+          <a class="btn btn-primary" id="maps" href="#" target="_blank" rel="noopener">
+            <svg class="i-pin" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>
+            <svg class="i-ext" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4h6v6"/><path d="M20 4l-9 9"/><path d="M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg>
+            <span id="maps-label">Como chegar</span>
+          </a>
+          <a class="btn" id="wa" href="#" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 3 10 14"/><path d="M21 3l-7 18-4-7-7-4z"/></svg>
+            Enviar no WhatsApp
+          </a>
+        </div>
+
+        <p class="fine" id="fine">Escala oficial da Prefeitura de Jaru, elaborada pela ACIJ. Confirme antes de sair de casa.</p>
+      </div>
+    </article>
+
+    <aside class="next" aria-labelledby="next-title">
+      <h2 id="next-title">Próximas noites</h2>
+      <ol class="next-list" id="next-list"></ol>
+      <p class="next-note">Plantão sempre das 22:00 às 07:00 do dia seguinte. Durante o dia, as farmácias abrem em horário comercial.</p>
+    </aside>
+  </section>
+
+  <section class="bula" id="escala" aria-labelledby="bula-title">
+    <div class="bula-head">
+      <h2 id="bula-title">Escala de <span id="month-name">outubro</span></h2>
+      <div class="tabs" role="tablist" aria-label="Mês" id="tabs"></div>
+      <label class="search">
+        <span class="visually-hidden">Buscar farmácia na escala</span>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m20 20-4.4-4.4"/></svg>
+        <input type="search" id="q" placeholder="Buscar farmácia ou rua" autocomplete="off" spellcheck="false">
+      </label>
+    </div>
+
+    <table class="sheet">
+      <thead>
+        <tr><th scope="col">Noite</th><th scope="col">Farmácia</th><th scope="col">Endereço</th></tr>
+      </thead>
+      <tbody id="sheet-body"></tbody>
+    </table>
+    <p class="empty" id="empty" hidden></p>
+  </section>
+</main>
+
+<footer class="foot">
+  <p>Site independente, sem ligação com a Prefeitura de Jaru ou a ACIJ. As informações vêm das escalas oficiais publicadas pela Prefeitura:
+    <a href="https://jaru.ro.gov.br/wp-content/uploads/2025/12/10-Outubro.pdf" target="_blank" rel="noopener">outubro</a>,
+    <a href="https://jaru.ro.gov.br/wp-content/uploads/2025/12/11-Novembro.pdf" target="_blank" rel="noopener">novembro</a> e
+    <a href="https://jaru.ro.gov.br/wp-content/uploads/2025/12/12-Dezembro.pdf" target="_blank" rel="noopener">dezembro de 2026</a>.
+  </p>
+  <p>Em emergência, ligue <a href="tel:192">192</a> (SAMU).</p>
+</footer>
+
+<script src="data/escala.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

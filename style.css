@@ -1,0 +1,470 @@
+/* Plantão Jaru: a caixa de remédio. */
+
+@font-face {
+  font-family: "Archivo";
+  font-style: normal;
+  font-weight: 300 900;
+  font-stretch: 62% 100%;
+  font-display: swap;
+  src: url("fonts/archivo-latin.woff2") format("woff2");
+}
+
+:root {
+  --band: #f5c400;
+  --band-ink: #141414;
+  --font: "Archivo", "Arial Narrow", sans-serif;
+  --gutter: clamp(16px, 4vw, 40px);
+  --radius: 3px;
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Dia: cartão claro. */
+:root[data-theme="day"] {
+  --ground: #e6e3dc;
+  --carton: #f7f6f2;
+  --ink: #141414;
+  --ink-2: #4a4843;
+  --rule: #cfcbc1;
+  --rule-strong: #141414;
+  --alert: #c8141c;
+  --alert-ink: #ffffff;
+  --btn: #141414;
+  --btn-ink: #f7f6f2;
+  --struck: #5f5c55;
+  color-scheme: light;
+}
+
+/* Noite: tinta escura; a página segue o horário de Jaru. */
+:root[data-theme="night"] {
+  --ground: #0f0f0e;
+  --carton: #1a1a18;
+  --ink: #ecebe6;
+  --ink-2: #a9a69d;
+  --rule: #34332f;
+  --rule-strong: #ecebe6;
+  --alert: #ff5a52;
+  --alert-ink: #141414;
+  --btn: #ecebe6;
+  --btn-ink: #141414;
+  --struck: #8a877f;
+  color-scheme: dark;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+[hidden] { display: none !important; }
+
+html {
+  background: var(--ground);
+  -webkit-text-size-adjust: 100%;
+  scrollbar-color: var(--rule) var(--ground);
+}
+
+body {
+  margin: 0;
+  background: var(--ground);
+  color: var(--ink);
+  font-family: var(--font);
+  font-size: 1.0625rem;
+  line-height: 1.5;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Transições de tema só depois da primeira renderização. */
+.ready body,
+.ready .box { transition: background-color 600ms var(--ease-out), color 600ms var(--ease-out), border-color 600ms var(--ease-out); }
+
+/* Sem JavaScript a caixa não tem o que mostrar. */
+html:not(.js) .now,
+html:not(.js) .bula,
+html:not(.js) .clock { display: none; }
+
+::selection { background: var(--band); color: var(--band-ink); }
+
+a { color: inherit; text-underline-offset: 0.2em; text-decoration-thickness: 1px; }
+a:hover { text-decoration-thickness: 2px; }
+
+:focus-visible {
+  outline: 3px solid var(--band);
+  outline-offset: 3px;
+  border-radius: var(--radius);
+}
+
+svg { fill: none; stroke: currentColor; stroke-width: 1.75; stroke-linecap: round; stroke-linejoin: round; }
+
+.visually-hidden {
+  position: absolute; width: 1px; height: 1px; overflow: hidden;
+  clip: rect(0 0 0 0); white-space: nowrap;
+}
+
+/* ---------- Barra ---------- */
+
+.bar {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 14px var(--gutter);
+}
+
+.mark {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  font-weight: 800;
+  font-stretch: 75%;
+  font-size: 1.25rem;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+}
+.mark svg { width: 28px; height: 22px; stroke-width: 1.5; }
+.mark-band { fill: var(--band); stroke: none; }
+
+.clock {
+  margin: 0 0 0 auto;
+  color: var(--ink-2);
+  font-size: 0.9375rem;
+}
+.clock time { color: var(--ink); font-weight: 600; }
+
+.bar-link {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  padding: 10px 0;
+}
+
+/* ---------- Caixa ---------- */
+
+main { max-width: 1180px; margin: 0 auto; }
+
+.now {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(300px, 380px);
+  gap: clamp(24px, 3vw, 40px);
+  padding: 8px var(--gutter) 0;
+  align-items: start;
+}
+
+.box {
+  background: var(--carton);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.tarja {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 2px 1rem;
+  padding: 14px clamp(20px, 3.5vw, 40px);
+  background: var(--band);
+  color: var(--band-ink);
+  font-size: 1.125rem;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  clip-path: inset(0 0 0 0);
+}
+.tarja strong { font-weight: 800; font-stretch: 80%; font-size: 1.375rem; letter-spacing: 0; }
+.tarja strong, .tarja span { white-space: nowrap; }
+.tarja span { font-weight: 600; }
+
+/* Hoje à noite: a tarja ainda não está cheia. */
+.box[data-state="tonight"] .tarja {
+  background: transparent;
+  color: var(--ink);
+  box-shadow: inset 0 -2px 0 var(--rule-strong), inset 0 2px 0 var(--rule-strong);
+}
+/* Fora da escala: tarja vermelha de aviso. */
+.box[data-state="unknown"] .tarja { background: var(--alert); color: var(--alert-ink); }
+
+.tarja.is-printing { animation: print 900ms var(--ease-out) both; }
+@keyframes print {
+  from { clip-path: inset(0 100% 0 0); }
+  to   { clip-path: inset(0 0 0 0); }
+}
+
+.box-body { padding: clamp(24px, 4vw, 44px) clamp(20px, 3.5vw, 40px) clamp(22px, 3vw, 32px); }
+
+.name {
+  margin: 0;
+  font-size: clamp(3.5rem, 16vw, 6rem);
+  line-height: 0.9;
+  font-weight: 850;
+  font-stretch: 68%;
+  text-transform: uppercase;
+  letter-spacing: -0.015em;
+  text-wrap: balance;
+  overflow-wrap: anywhere;
+}
+.name-pre { font-weight: 300; }
+
+/* Como na caixa: nome do produto, princípio ativo, concentração. */
+.addr {
+  margin: 20px 0 0;
+  font-size: clamp(1.25rem, 2.6vw, 1.625rem);
+  font-weight: 400;
+  font-stretch: 100%;
+  line-height: 1.25;
+}
+
+.strength {
+  margin: 4px 0 0;
+  font-size: clamp(1.25rem, 2.6vw, 1.625rem);
+  font-weight: 800;
+  font-stretch: 75%;
+  text-transform: uppercase;
+  line-height: 1.2;
+}
+
+/* Carimbo de lote e validade. */
+.lot {
+  display: inline-flex;
+  margin: 20px 0 0;
+  border: 1px solid var(--rule-strong);
+  font-size: 0.8125rem;
+  text-transform: uppercase;
+}
+.lot div { display: flex; gap: 7px; align-items: baseline; padding: 5px 10px 4px; }
+.lot div + div { border-left: 1px solid var(--rule-strong); }
+.lot dt { font-weight: 400; letter-spacing: 0.08em; color: var(--ink-2); }
+.lot dd { margin: 0; font-weight: 700; letter-spacing: 0.04em; }
+
+.btn .i-ext { display: none; }
+.box[data-state="unknown"] .btn .i-pin,
+.box[data-state="nodata"] .btn .i-pin { display: none; }
+.box[data-state="unknown"] .btn .i-ext,
+.box[data-state="nodata"] .btn .i-ext { display: block; }
+.box[data-state="nodata"] .tarja { background: var(--alert); color: var(--alert-ink); }
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: clamp(26px, 4vw, 36px);
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 52px;
+  padding: 0 22px;
+  border: 1.5px solid var(--ink);
+  border-radius: var(--radius);
+  font-size: 1.0625rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: background-color 160ms var(--ease-out), color 160ms var(--ease-out), transform 160ms var(--ease-out);
+}
+.btn svg { width: 20px; height: 20px; flex: none; }
+.btn:hover { background: var(--ink); color: var(--carton); }
+.btn:active { transform: translateY(1px); }
+.btn-primary { background: var(--btn); color: var(--btn-ink); border-color: var(--btn); }
+.btn-primary:hover { background: var(--band); color: var(--band-ink); border-color: var(--band); }
+
+.fine {
+  margin: 26px 0 0;
+  padding-top: 14px;
+  border-top: 1px solid var(--rule);
+  color: var(--ink-2);
+  font-size: 0.875rem;
+  max-width: 62ch;
+}
+
+/* ---------- Próximas noites ---------- */
+
+.next h2, .bula h2 {
+  margin: 0;
+  font-size: 1.375rem;
+  font-weight: 800;
+  font-stretch: 75%;
+  text-transform: uppercase;
+  letter-spacing: 0;
+}
+
+.next { padding-top: 6px; }
+
+.next-list {
+  list-style: none;
+  margin: 14px 0 0;
+  padding: 0;
+  border-top: 2px solid var(--rule-strong);
+}
+
+.next-list li {
+  display: grid;
+  grid-template-columns: 58px minmax(0, 1fr);
+  gap: 14px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--rule);
+}
+
+.next-list li.gap { grid-template-columns: 1fr; }
+
+.when { line-height: 1.05; }
+.when b { display: block; font-size: 1.75rem; font-weight: 700; font-stretch: 75%; }
+.when small { color: var(--ink-2); font-size: 0.8125rem; text-transform: lowercase; }
+
+.who { min-width: 0; }
+.who strong { display: block; font-weight: 700; font-stretch: 85%; font-size: 1.0625rem; line-height: 1.25; }
+.who span { display: block; color: var(--ink-2); font-size: 0.875rem; }
+
+.next-note { margin: 14px 0 0; color: var(--ink-2); font-size: 0.875rem; }
+
+/* ---------- Bula: escala do mês ---------- */
+
+.bula {
+  margin-top: clamp(48px, 7vw, 88px);
+  padding: 0 var(--gutter);
+  scroll-margin-top: 16px;
+}
+
+.bula-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px 20px;
+  padding-bottom: 14px;
+  border-bottom: 2px solid var(--rule-strong);
+}
+.bula-head h2 { font-size: clamp(1.625rem, 3.5vw, 2.25rem); margin-right: auto; }
+
+.tabs { display: flex; gap: 4px; }
+.tabs button {
+  min-height: 48px;
+  padding: 0 14px;
+  border: 1px solid var(--rule);
+  border-radius: var(--radius);
+  background: transparent;
+  color: var(--ink);
+  font: inherit;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+.tabs button:hover { border-color: var(--ink); }
+.tabs button[aria-selected="true"] { background: var(--ink); color: var(--carton); border-color: var(--ink); }
+
+.search {
+  position: relative;
+  flex: 0 1 280px;
+}
+.search svg {
+  position: absolute; left: 12px; top: 50%; width: 18px; height: 18px;
+  transform: translateY(-50%); color: var(--ink-2); pointer-events: none;
+}
+.search input {
+  width: 100%;
+  min-height: 44px;
+  padding: 0 12px 0 38px;
+  border: 1px solid var(--rule);
+  border-radius: var(--radius);
+  background: var(--carton);
+  color: var(--ink);
+  font: inherit;
+  font-size: 1rem;
+  caret-color: var(--band);
+}
+.search input::placeholder { color: var(--ink-2); opacity: 1; }
+.search input:hover { border-color: var(--ink-2); }
+
+.sheet {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9375rem;
+}
+.sheet th {
+  padding: 12px 10px 8px;
+  text-align: left;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-2);
+  border-bottom: 1px solid var(--rule);
+}
+.sheet td {
+  padding: 10px;
+  border-bottom: 1px solid var(--rule);
+  vertical-align: baseline;
+}
+.sheet td:first-child { white-space: nowrap; width: 7.5rem; }
+.sheet .d { font-weight: 700; font-size: 1.0625rem; }
+.sheet .wd { color: var(--ink-2); margin-left: 6px; }
+.sheet .f { font-weight: 650; font-stretch: 88%; font-size: 1.0625rem; }
+.sheet .a { color: var(--ink-2); }
+
+/* Estado pela forma: passada riscada, hoje à noite contornada, agora com tarja cheia. */
+.sheet tr.past td { color: var(--struck); }
+.sheet tr.past .f, .sheet tr.past .d { text-decoration: line-through; text-decoration-thickness: 1.5px; }
+.sheet tr.tonight td { box-shadow: inset 0 2px 0 var(--rule-strong), inset 0 -2px 0 var(--rule-strong); }
+.sheet tr.current td { background: var(--band); color: var(--band-ink); border-bottom-color: var(--band); }
+.sheet tr.current .wd, .sheet tr.current .a { color: var(--band-ink); }
+
+.empty { padding: 28px 0; color: var(--ink-2); }
+
+/* ---------- Rodapé ---------- */
+
+.foot {
+  max-width: 1180px;
+  margin: clamp(48px, 7vw, 80px) auto 0;
+  padding: 22px var(--gutter) 40px;
+  border-top: 1px solid var(--rule);
+  color: var(--ink-2);
+  font-size: 0.875rem;
+}
+.foot p { margin: 0 0 8px; max-width: 75ch; }
+.foot a { color: var(--ink); }
+
+.noscript { max-width: 60ch; margin: 24px var(--gutter); }
+
+/* ---------- Telas menores ---------- */
+
+@media (max-width: 1000px) and (min-width: 861px) {
+  .now { grid-template-columns: minmax(0, 1fr) 300px; }
+}
+
+@media (max-width: 860px) {
+  .now { grid-template-columns: 1fr; padding: 0; }
+  .box { border-left: 0; border-right: 0; border-radius: 0; }
+  .next { padding: 0 var(--gutter); }
+}
+
+@media (max-width: 600px) {
+  .bar { gap: 12px; flex-wrap: wrap; }
+  .bar-link { display: none; }
+  .tarja { font-size: 0.9375rem; }
+  .tarja strong { font-size: 1.1875rem; }
+  .actions .btn { flex: 1 1 100%; }
+  .search { flex-basis: 100%; }
+
+  .sheet thead { display: none; }
+  .sheet, .sheet tbody, .sheet tr, .sheet td { display: block; width: auto; }
+  .sheet tr {
+    display: grid;
+    grid-template-columns: 4.25rem minmax(0, 1fr);
+    padding: 10px 0;
+    border-bottom: 1px solid var(--rule);
+  }
+  .sheet td { padding: 0 10px; border: 0; }
+  .sheet td:first-child { grid-row: span 2; width: auto; }
+  .sheet .wd { display: block; margin: 0; font-size: 0.8125rem; }
+  .sheet .a { font-size: 0.875rem; }
+  /* No celular a tarja da noite atual sangra até as bordas da tela. */
+  .bula { overflow-x: clip; }
+  .sheet tr.current {
+    background: var(--band); color: var(--band-ink); border-bottom-color: var(--band);
+    box-shadow: calc(-1 * var(--gutter)) 0 0 var(--band), var(--gutter) 0 0 var(--band);
+  }
+  .sheet tr.current td { background: none; }
+  .sheet tr.tonight { box-shadow: inset 0 2px 0 var(--rule-strong), inset 0 -2px 0 var(--rule-strong); }
+  .sheet tr.tonight td { box-shadow: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}

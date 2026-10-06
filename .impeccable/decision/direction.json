@@ -1,0 +1,123 @@
+{
+  "title": "Escolha o mundo visual do Plantão Jaru",
+  "question": "O sorteio caiu em \"Caixa de remédio\". Fique com ele, escolha uma alternativa ou sorteie de novo.",
+  "options": [
+    {
+      "id": "assigned",
+      "label": "Caixa de remédio",
+      "kicker": "O SORTEIO",
+      "lineage": "embalagens de medicamento brasileiras: tarja, faixa do genérico, bula",
+      "thesis": "A farmácia de plantão é impressa como a face de uma caixa de remédio, e a tarja marca quem está aberta agora.",
+      "palette": ["#f3f2ed", "#141414", "#d4141e", "#f5c400"],
+      "materials": ["cartão offset", "faixa de cor sangrando", "texto de bula em corpo pequeno"],
+      "viewport": "Celular: o nome da farmácia aberta em caixa alta enorme, como nome de medicamento, cortado por uma tarja de cor; logo abaixo vêm a 'posologia' (22h às 7h), o endereço e o botão Como chegar. A bula, abaixo, traz as próximas noites e o mês.",
+      "risk": "Vira fantasia de embalagem se a tipografia ficar tímida, e o vermelho pode soar alarmista se tomar mais do que a faixa.",
+      "raised": [
+        { "from": "operate-c-emission-line-rail", "raise": "O estado aparece pela forma, não só pela cor: agora tem faixa cheia, as próximas noites faixa fina e as passadas ficam riscadas." },
+        { "from": "japanese-high-density-web", "raise": "A escala do mês é uma bula em módulos de fio fino: densa, legível, sem desperdiçar tela." },
+        { "from": "wayfinding-cartography-signage-midnight-transit-diagram", "raise": "Uma só farmácia acende; todo o resto recua um tom." }
+      ]
+    },
+    {
+      "id": "model-pick",
+      "label": "Aviso colado na porta",
+      "kicker": "IMPECCABLE’S PICK",
+      "lineage": "a escala da ACIJ impressa em A4 e colada com fita no vidro da farmácia",
+      "thesis": "O papel que todo morador já viu na porta, finalmente respondendo sozinho quem está aberta.",
+      "palette": ["#fbfaf6", "#1a1a1a", "#2f7d32", "#e8e0c8"],
+      "materials": ["folha A4", "fita adesiva", "tabela de planilha impressa"],
+      "viewport": "A folha ocupa a tela; a linha de hoje está marcada à caneta e o nome da farmácia aberta foi reescrito grande no topo.",
+      "risk": "É a direção mais familiar, a que a maioria dos sites desse tipo chega, e pode parecer improvisada."
+    },
+    {
+      "id": "challenger-boarding-pass",
+      "label": "Cartão de embarque e painel",
+      "verdict": "competitive",
+      "lineage": "cartão de embarque e painel de partidas da rodoviária",
+      "thesis": "Cada noite é uma partida: o cartão mostra o plantão de agora e o painel ordena as próximas.",
+      "palette": ["#101418", "#f2f2f2", "#ffb000", "#8a96a3"],
+      "materials": ["painel de partidas", "algarismos tabulares", "canhoto destacável"],
+      "viewport": "Um cartão de embarque com a farmácia de agora, horário e endereço em segmentos; abaixo, o painel com as próximas sete noites.",
+      "case": "Ganha em clareza (a ordem do tempo organiza tudo), mas perde em identificação: pouca gente em Jaru vive aeroporto.",
+      "risk": "Pode parecer site de viagem e confundir quem procura farmácia.",
+      "hero": "https://impeccable.style/worlds/cards/vernacular-ephemera-boarding-pass-and-gate-board-hero.webp"
+    },
+    {
+      "id": "challenger-japanese-density",
+      "label": "Portal denso japonês",
+      "verdict": "declined",
+      "lineage": "portais japoneses de alta densidade",
+      "thesis": "Tudo numa tela só, em módulos apertados.",
+      "palette": ["#ffffff", "#111111", "#d0021b", "#c9ccd1"],
+      "materials": ["fios finos", "abas vermelhas"],
+      "viewport": "Mosaico de módulos.",
+      "case": "Perde nos dois eixos: às 2h da manhã a pessoa precisa de uma resposta grande, não de um mosaico.",
+      "risk": "Ilegível para quem tem pressa.",
+      "kept": "A disciplina de fios finos e densidade na escala do mês."
+    },
+    {
+      "id": "challenger-transit",
+      "label": "Mapa de metrô noturno",
+      "verdict": "declined",
+      "lineage": "diagramas de metrô em esmalte",
+      "thesis": "O rodízio como uma linha de estações.",
+      "palette": ["#0c1a3a", "#f4f1ea", "#d7263d", "#2e86de"],
+      "materials": ["esmalte", "linhas a 45°"],
+      "viewport": "Linha com as noites como estações.",
+      "case": "Perde nos dois eixos: Jaru não tem metrô e o rodízio não é uma rede.",
+      "risk": "Fantasia sem chão local.",
+      "kept": "Só uma coisa acende; o resto recua."
+    },
+    {
+      "id": "challenger-emission",
+      "label": "Trilho de linhas de emissão",
+      "verdict": "declined",
+      "lineage": "espectrogramas de vidro",
+      "thesis": "Estado como forma de linha.",
+      "palette": ["#2a2a2a", "#e8e2d4", "#f5c400"],
+      "materials": ["fios de luz", "carvão"],
+      "viewport": "Trilho único com marcas.",
+      "case": "Perde nos dois eixos: abstrato demais para a urgência.",
+      "risk": "Ninguém entende de primeira.",
+      "kept": "Estado pela forma (cheia, fina, riscada), não só pela cor."
+    },
+    {
+      "id": "challenger-crouwel",
+      "label": "Grade de Crouwel",
+      "verdict": "declined",
+      "lineage": "pôsteres de Wim Crouwel",
+      "thesis": "Letras construídas na grade.",
+      "palette": ["#ffffff", "#111111", "#1f5bd8"],
+      "materials": ["grade visível"],
+      "viewport": "Data monumental em grade.",
+      "case": "Perde nos dois eixos: letras construídas atrapalham a leitura de nomes e endereços.",
+      "risk": "Ilegível para idosos.",
+      "kept": "Algarismos grandes e firmes para o horário."
+    },
+    {
+      "id": "challenger-mascots",
+      "label": "Catálogo de mascotes",
+      "verdict": "declined",
+      "lineage": "catálogos de personagens",
+      "thesis": "Cada farmácia como personagem.",
+      "palette": ["#ffe3ec", "#fff6d6", "#222222"],
+      "materials": ["pastel", "contorno branco"],
+      "viewport": "Grade de personagens.",
+      "case": "Perde nos dois eixos: tom infantil num momento de urgência.",
+      "risk": "Falta de seriedade.",
+      "kept": "Cada farmácia tem sempre os mesmos dados fixos, no mesmo lugar."
+    }
+  ],
+  "reroll": { "registers": ["safer", "bolder"] },
+  "buildPath": { "value": "code" },
+  "canon": true,
+  "canonCard": {
+    "label": "O padrão da categoria",
+    "thesis": "O que sites de farmácia de plantão costumam ser, feito com capricho.",
+    "palette": ["#ffffff", "#1f2937", "#16a34a"],
+    "materials": ["cartões brancos", "cruz verde", "lista simples"],
+    "viewport": "Cabeçalho com cruz verde, um cartão com a farmácia de hoje e uma lista abaixo.",
+    "risk": "Igual a todos os outros, de propósito."
+  },
+  "steer": true
+}

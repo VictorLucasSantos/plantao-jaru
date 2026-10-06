@@ -1,0 +1,499 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-06T03:16:26+00:00",
+  "title": "Design System: Plantão Jaru",
+  "extensions": {
+    "colorMeta": {
+      "band": {
+        "role": "primary",
+        "displayName": "Generic Yellow Band",
+        "canonical": "oklch(84.0% 0.172 90)",
+        "tonalRamp": [
+          "oklch(15% 0.120 90)",
+          "oklch(26% 0.120 90)",
+          "oklch(37% 0.120 90)",
+          "oklch(48% 0.120 90)",
+          "oklch(60% 0.120 90)",
+          "oklch(72% 0.120 90)",
+          "oklch(84% 0.120 90)",
+          "oklch(95% 0.120 90)"
+        ]
+      },
+      "band-ink": {
+        "role": "neutral",
+        "displayName": "Band Ink",
+        "canonical": "oklch(19.1% 0.000 90)",
+        "tonalRamp": [
+          "oklch(15% 0.000 90)",
+          "oklch(26% 0.000 90)",
+          "oklch(37% 0.000 90)",
+          "oklch(48% 0.000 90)",
+          "oklch(60% 0.000 90)",
+          "oklch(72% 0.000 90)",
+          "oklch(84% 0.000 90)",
+          "oklch(95% 0.000 90)"
+        ]
+      },
+      "day-ground": {
+        "role": "neutral",
+        "displayName": "Carton Ground (day)",
+        "canonical": "oklch(91.6% 0.010 87)",
+        "tonalRamp": [
+          "oklch(15% 0.010 87)",
+          "oklch(26% 0.010 87)",
+          "oklch(37% 0.010 87)",
+          "oklch(48% 0.010 87)",
+          "oklch(60% 0.010 87)",
+          "oklch(72% 0.010 87)",
+          "oklch(84% 0.010 87)",
+          "oklch(95% 0.010 87)"
+        ]
+      },
+      "day-carton": {
+        "role": "neutral",
+        "displayName": "Carton Face (day)",
+        "canonical": "oklch(97.3% 0.005 95)",
+        "tonalRamp": [
+          "oklch(15% 0.005 95)",
+          "oklch(26% 0.005 95)",
+          "oklch(37% 0.005 95)",
+          "oklch(48% 0.005 95)",
+          "oklch(60% 0.005 95)",
+          "oklch(72% 0.005 95)",
+          "oklch(84% 0.005 95)",
+          "oklch(95% 0.005 95)"
+        ]
+      },
+      "day-ink": {
+        "role": "neutral",
+        "displayName": "Ink (day)",
+        "canonical": "oklch(19.1% 0.000 90)",
+        "tonalRamp": [
+          "oklch(15% 0.000 90)",
+          "oklch(26% 0.000 90)",
+          "oklch(37% 0.000 90)",
+          "oklch(48% 0.000 90)",
+          "oklch(60% 0.000 90)",
+          "oklch(72% 0.000 90)",
+          "oklch(84% 0.000 90)",
+          "oklch(95% 0.000 90)"
+        ]
+      },
+      "day-ink-2": {
+        "role": "neutral",
+        "displayName": "Faded Ink (day)",
+        "canonical": "oklch(40.2% 0.009 89)",
+        "tonalRamp": [
+          "oklch(15% 0.009 89)",
+          "oklch(26% 0.009 89)",
+          "oklch(37% 0.009 89)",
+          "oklch(48% 0.009 89)",
+          "oklch(60% 0.009 89)",
+          "oklch(72% 0.009 89)",
+          "oklch(84% 0.009 89)",
+          "oklch(95% 0.009 89)"
+        ]
+      },
+      "day-rule": {
+        "role": "neutral",
+        "displayName": "Hairline (day)",
+        "canonical": "oklch(84.3% 0.014 89)",
+        "tonalRamp": [
+          "oklch(15% 0.014 89)",
+          "oklch(26% 0.014 89)",
+          "oklch(37% 0.014 89)",
+          "oklch(48% 0.014 89)",
+          "oklch(60% 0.014 89)",
+          "oklch(72% 0.014 89)",
+          "oklch(84% 0.014 89)",
+          "oklch(95% 0.014 89)"
+        ]
+      },
+      "day-struck": {
+        "role": "neutral",
+        "displayName": "Struck Ink (day)",
+        "canonical": "oklch(47.5% 0.012 88)",
+        "tonalRamp": [
+          "oklch(15% 0.012 88)",
+          "oklch(26% 0.012 88)",
+          "oklch(37% 0.012 88)",
+          "oklch(48% 0.012 88)",
+          "oklch(60% 0.012 88)",
+          "oklch(72% 0.012 88)",
+          "oklch(84% 0.012 88)",
+          "oklch(95% 0.012 88)"
+        ]
+      },
+      "day-alert": {
+        "role": "tertiary",
+        "displayName": "Warning Band Red (day)",
+        "canonical": "oklch(53.0% 0.207 27)",
+        "tonalRamp": [
+          "oklch(15% 0.120 27)",
+          "oklch(26% 0.120 27)",
+          "oklch(37% 0.120 27)",
+          "oklch(48% 0.120 27)",
+          "oklch(60% 0.120 27)",
+          "oklch(72% 0.120 27)",
+          "oklch(84% 0.120 27)",
+          "oklch(95% 0.120 27)"
+        ]
+      },
+      "day-alert-ink": {
+        "role": "neutral",
+        "displayName": "Warning Ink (day)",
+        "canonical": "oklch(100.0% 0.000 90)",
+        "tonalRamp": [
+          "oklch(15% 0.000 90)",
+          "oklch(26% 0.000 90)",
+          "oklch(37% 0.000 90)",
+          "oklch(48% 0.000 90)",
+          "oklch(60% 0.000 90)",
+          "oklch(72% 0.000 90)",
+          "oklch(84% 0.000 90)",
+          "oklch(95% 0.000 90)"
+        ]
+      },
+      "night-ground": {
+        "role": "neutral",
+        "displayName": "Carton Ground (night)",
+        "canonical": "oklch(16.8% 0.002 107)",
+        "tonalRamp": [
+          "oklch(15% 0.002 107)",
+          "oklch(26% 0.002 107)",
+          "oklch(37% 0.002 107)",
+          "oklch(48% 0.002 107)",
+          "oklch(60% 0.002 107)",
+          "oklch(72% 0.002 107)",
+          "oklch(84% 0.002 107)",
+          "oklch(95% 0.002 107)"
+        ]
+      },
+      "night-carton": {
+        "role": "neutral",
+        "displayName": "Carton Face (night)",
+        "canonical": "oklch(21.7% 0.004 107)",
+        "tonalRamp": [
+          "oklch(15% 0.004 107)",
+          "oklch(26% 0.004 107)",
+          "oklch(37% 0.004 107)",
+          "oklch(48% 0.004 107)",
+          "oklch(60% 0.004 107)",
+          "oklch(72% 0.004 107)",
+          "oklch(84% 0.004 107)",
+          "oklch(95% 0.004 107)"
+        ]
+      },
+      "night-ink": {
+        "role": "neutral",
+        "displayName": "Ink (night)",
+        "canonical": "oklch(93.9% 0.007 97)",
+        "tonalRamp": [
+          "oklch(15% 0.007 97)",
+          "oklch(26% 0.007 97)",
+          "oklch(37% 0.007 97)",
+          "oklch(48% 0.007 97)",
+          "oklch(60% 0.007 97)",
+          "oklch(72% 0.007 97)",
+          "oklch(84% 0.007 97)",
+          "oklch(95% 0.007 97)"
+        ]
+      },
+      "night-ink-2": {
+        "role": "neutral",
+        "displayName": "Faded Ink (night)",
+        "canonical": "oklch(72.5% 0.013 92)",
+        "tonalRamp": [
+          "oklch(15% 0.013 92)",
+          "oklch(26% 0.013 92)",
+          "oklch(37% 0.013 92)",
+          "oklch(48% 0.013 92)",
+          "oklch(60% 0.013 92)",
+          "oklch(72% 0.013 92)",
+          "oklch(84% 0.013 92)",
+          "oklch(95% 0.013 92)"
+        ]
+      },
+      "night-rule": {
+        "role": "neutral",
+        "displayName": "Hairline (night)",
+        "canonical": "oklch(32.1% 0.007 95)",
+        "tonalRamp": [
+          "oklch(15% 0.007 95)",
+          "oklch(26% 0.007 95)",
+          "oklch(37% 0.007 95)",
+          "oklch(48% 0.007 95)",
+          "oklch(60% 0.007 95)",
+          "oklch(72% 0.007 95)",
+          "oklch(84% 0.007 95)",
+          "oklch(95% 0.007 95)"
+        ]
+      },
+      "night-struck": {
+        "role": "neutral",
+        "displayName": "Struck Ink (night)",
+        "canonical": "oklch(62.4% 0.012 90)",
+        "tonalRamp": [
+          "oklch(15% 0.012 90)",
+          "oklch(26% 0.012 90)",
+          "oklch(37% 0.012 90)",
+          "oklch(48% 0.012 90)",
+          "oklch(60% 0.012 90)",
+          "oklch(72% 0.012 90)",
+          "oklch(84% 0.012 90)",
+          "oklch(95% 0.012 90)"
+        ]
+      },
+      "night-alert": {
+        "role": "tertiary",
+        "displayName": "Warning Band Red (night)",
+        "canonical": "oklch(68.7% 0.202 27)",
+        "tonalRamp": [
+          "oklch(15% 0.120 27)",
+          "oklch(26% 0.120 27)",
+          "oklch(37% 0.120 27)",
+          "oklch(48% 0.120 27)",
+          "oklch(60% 0.120 27)",
+          "oklch(72% 0.120 27)",
+          "oklch(84% 0.120 27)",
+          "oklch(95% 0.120 27)"
+        ]
+      },
+      "night-alert-ink": {
+        "role": "neutral",
+        "displayName": "Warning Ink (night)",
+        "canonical": "oklch(19.1% 0.000 90)",
+        "tonalRamp": [
+          "oklch(15% 0.000 90)",
+          "oklch(26% 0.000 90)",
+          "oklch(37% 0.000 90)",
+          "oklch(48% 0.000 90)",
+          "oklch(60% 0.000 90)",
+          "oklch(72% 0.000 90)",
+          "oklch(84% 0.000 90)",
+          "oklch(95% 0.000 90)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Pharmacy name only; generic prefix drops to weight 300."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Month sheet heading."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Section heads, tarja state word, sector line."
+      },
+      "address": {
+        "displayName": "Address",
+        "purpose": "Street and number under the name."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Base text, buttons at 700, list names at 700 and 85% width."
+      },
+      "fine": {
+        "displayName": "Fine",
+        "purpose": "Source notes, footer, list secondary lines; 62-75ch."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Uppercase tracked table headers and lot stamp."
+      }
+    },
+    "shadows": [
+      {
+        "name": "rule-outline",
+        "value": "inset 0 2px 0 var(--rule-strong), inset 0 -2px 0 var(--rule-strong)",
+        "purpose": "Draws the outlined 'tonight' band on the tarja and sheet row. A print rule, not elevation."
+      },
+      {
+        "name": "band-bleed",
+        "value": "calc(-1 * var(--gutter)) 0 0 var(--band), var(--gutter) 0 0 var(--band)",
+        "purpose": "Phone only: extends the current sheet row's yellow band to the screen edges."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-out",
+        "value": "cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "The only easing; all transitions and the tarja wipe."
+      },
+      {
+        "name": "tarja-print",
+        "value": "clip-path: inset(0 100% 0 0) to inset(0 0 0 0), 900ms ease-out",
+        "purpose": "Signature wipe of the state band on load and when the state flips at 22:00 / 07:00."
+      },
+      {
+        "name": "theme-crossfade",
+        "value": "600ms ease-out on background-color, color, border-color",
+        "purpose": "Day/night printing change, enabled only after first render."
+      },
+      {
+        "name": "control-state",
+        "value": "160ms ease-out on background-color, color, transform",
+        "purpose": "Button hover fill and 1px active nudge."
+      },
+      {
+        "name": "reduced-motion",
+        "value": "animation: none; transition: none",
+        "purpose": "All motion removed under prefers-reduced-motion: reduce."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "compact-desktop",
+        "value": "861px-1000px"
+      },
+      {
+        "name": "single-column",
+        "value": "860px"
+      },
+      {
+        "name": "phone",
+        "value": "600px"
+      }
+    ],
+    "themes": [
+      {
+        "name": "night",
+        "trigger": "Jaru hour 18:00-06:59 (UTC-4), set before first paint",
+        "themeColor": "#0f0f0e"
+      },
+      {
+        "name": "day",
+        "trigger": "Jaru hour 07:00-17:59",
+        "themeColor": "#e6e3dc"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Tarja (State Band)",
+      "kind": "custom",
+      "refersTo": "tarja-open",
+      "description": "Signature band atop the box; yellow = open now, outlined = tonight, red = outside the schedule. Wipes in once via clip-path.",
+      "html": "<div class=\"ds-tarja\"><strong>Aberta agora</strong><span>até 07:00</span></div><div class=\"ds-tarja ds-tarja-tonight\"><strong>Hoje à noite</strong><span>das 22:00 às 07:00</span></div><div class=\"ds-tarja ds-tarja-alert\"><strong>Fora da escala</strong><span>confira a fonte</span></div>",
+      "css": ":host{--band:#f5c400;--band-ink:#141414;--radius:3px;--ease-out:cubic-bezier(0.16,1,0.3,1);--ground:#0f0f0e;--carton:#1a1a18;--ink:#ecebe6;--ink-2:#a9a69d;--rule:#34332f;--rule-strong:#ecebe6;--alert:#ff5a52;--alert-ink:#141414;--btn:#ecebe6;--btn-ink:#141414;--struck:#8a877f}.ds-tarja{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:2px 1rem;padding:14px 32px;margin-bottom:8px;background:var(--band);color:var(--band-ink);font-family:\"Archivo\",\"Arial Narrow\",sans-serif;font-size:1.125rem;text-transform:uppercase;letter-spacing:0.02em;animation:ds-print 900ms var(--ease-out) both}.ds-tarja strong{font-weight:800;font-stretch:80%;font-size:1.375rem;letter-spacing:0}.ds-tarja span{font-weight:600}.ds-tarja-tonight{background:var(--carton);color:var(--ink);box-shadow:inset 0 -2px 0 var(--rule-strong),inset 0 2px 0 var(--rule-strong)}.ds-tarja-alert{background:var(--alert);color:var(--alert-ink)}@keyframes ds-print{from{clip-path:inset(0 100% 0 0)}to{clip-path:inset(0 0 0 0)}}@media (prefers-reduced-motion:reduce){.ds-tarja{animation:none}}"
+    },
+    {
+      "name": "Box (Carton Face)",
+      "kind": "card",
+      "refersTo": "box-night",
+      "description": "The medicine carton: tarja, condensed name, address, sector, lot stamp.",
+      "html": "<article class=\"ds-box\"><div class=\"ds-box-tarja\"><strong>Aberta agora</strong><span>até 07:00</span></div><div class=\"ds-box-body\"><h1 class=\"ds-name\"><span>Farmácia</span> Exemplo</h1><p class=\"ds-addr\">Av. Padre Adolpho Rohl, 1544</p><p class=\"ds-strength\">Setor 02</p><dl class=\"ds-lot\"><div><dt>Início</dt><dd>14/10 22:00</dd></div><div><dt>Fim</dt><dd>15/10 07:00</dd></div></dl></div></article>",
+      "css": ":host{--band:#f5c400;--band-ink:#141414;--radius:3px;--ease-out:cubic-bezier(0.16,1,0.3,1);--ground:#0f0f0e;--carton:#1a1a18;--ink:#ecebe6;--ink-2:#a9a69d;--rule:#34332f;--rule-strong:#ecebe6;--alert:#ff5a52;--alert-ink:#141414;--btn:#ecebe6;--btn-ink:#141414;--struck:#8a877f}.ds-box{background:var(--carton);color:var(--ink);border:1px solid var(--rule);border-radius:var(--radius);overflow:hidden;font-family:\"Archivo\",\"Arial Narrow\",sans-serif;font-variant-numeric:tabular-nums}.ds-box-tarja{display:flex;justify-content:space-between;align-items:baseline;padding:14px 32px;background:var(--band);color:var(--band-ink);text-transform:uppercase;font-size:1.125rem}.ds-box-tarja strong{font-weight:800;font-stretch:80%;font-size:1.375rem}.ds-box-tarja span{font-weight:600}.ds-box-body{padding:36px 32px 28px}.ds-name{margin:0;font-size:clamp(3rem,10vw,6rem);line-height:0.9;font-weight:850;font-stretch:68%;text-transform:uppercase;letter-spacing:-0.015em}.ds-name span{font-weight:300}.ds-addr{margin:20px 0 0;font-size:1.5rem;line-height:1.25}.ds-strength{margin:4px 0 0;font-size:1.5rem;font-weight:800;font-stretch:75%;text-transform:uppercase}.ds-lot{display:inline-flex;margin:20px 0 0;border:1px solid var(--rule-strong);font-size:0.8125rem;text-transform:uppercase}.ds-lot div{display:flex;gap:7px;align-items:baseline;padding:5px 10px 4px}.ds-lot div+div{border-left:1px solid var(--rule-strong)}.ds-lot dt{letter-spacing:0.08em;color:var(--ink-2)}.ds-lot dd{margin:0;font-weight:700;letter-spacing:0.04em}"
+    },
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary-night",
+      "description": "Ink-filled main action (Como chegar); turns to the yellow band on hover.",
+      "html": "<a class=\"ds-btn ds-btn-primary\" href=\"#\"><svg viewBox=\"0 0 24 24\" width=\"20\" height=\"20\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.75\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z\"/><circle cx=\"12\" cy=\"9.5\" r=\"2.5\"/></svg><span>Como chegar</span></a>",
+      "css": ":host{--band:#f5c400;--band-ink:#141414;--radius:3px;--ease-out:cubic-bezier(0.16,1,0.3,1);--ground:#0f0f0e;--carton:#1a1a18;--ink:#ecebe6;--ink-2:#a9a69d;--rule:#34332f;--rule-strong:#ecebe6;--alert:#ff5a52;--alert-ink:#141414;--btn:#ecebe6;--btn-ink:#141414;--struck:#8a877f}.ds-btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 22px;border:1.5px solid var(--ink);border-radius:var(--radius);background:transparent;color:var(--ink);font-family:\"Archivo\",\"Arial Narrow\",sans-serif;font-size:1.0625rem;font-weight:700;text-decoration:none;cursor:pointer;transition:background-color 160ms var(--ease-out),color 160ms var(--ease-out),transform 160ms var(--ease-out)}.ds-btn:active{transform:translateY(1px)}.ds-btn:focus-visible{outline:3px solid var(--band);outline-offset:3px}.ds-btn-primary{background:var(--btn);color:var(--btn-ink);border-color:var(--btn)}.ds-btn-primary:hover{background:var(--band);color:var(--band-ink);border-color:var(--band)}"
+    },
+    {
+      "name": "Outline Button",
+      "kind": "button",
+      "refersTo": "button-outline",
+      "description": "Secondary action (Enviar no WhatsApp); fills with ink on hover.",
+      "html": "<a class=\"ds-btn\" href=\"#\"><svg viewBox=\"0 0 24 24\" width=\"20\" height=\"20\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.75\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M21 3 10 14\"/><path d=\"M21 3l-7 18-4-7-7-4z\"/></svg><span>Enviar no WhatsApp</span></a>",
+      "css": ":host{--band:#f5c400;--band-ink:#141414;--radius:3px;--ease-out:cubic-bezier(0.16,1,0.3,1);--ground:#0f0f0e;--carton:#1a1a18;--ink:#ecebe6;--ink-2:#a9a69d;--rule:#34332f;--rule-strong:#ecebe6;--alert:#ff5a52;--alert-ink:#141414;--btn:#ecebe6;--btn-ink:#141414;--struck:#8a877f}.ds-btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 22px;border:1.5px solid var(--ink);border-radius:var(--radius);background:transparent;color:var(--ink);font-family:\"Archivo\",\"Arial Narrow\",sans-serif;font-size:1.0625rem;font-weight:700;text-decoration:none;cursor:pointer;transition:background-color 160ms var(--ease-out),color 160ms var(--ease-out),transform 160ms var(--ease-out)}.ds-btn:active{transform:translateY(1px)}.ds-btn:focus-visible{outline:3px solid var(--band);outline-offset:3px}.ds-btn:hover{background:var(--ink);color:var(--carton)}"
+    },
+    {
+      "name": "Month Tabs",
+      "kind": "chip",
+      "refersTo": "tab-selected-night",
+      "description": "Month switch for the schedule sheet; selected fills with ink.",
+      "html": "<div class=\"ds-tabs\" role=\"tablist\"><button role=\"tab\" aria-selected=\"true\" class=\"ds-tab\">out</button><button role=\"tab\" aria-selected=\"false\" class=\"ds-tab\">nov</button><button role=\"tab\" aria-selected=\"false\" class=\"ds-tab\">dez</button></div>",
+      "css": ":host{--band:#f5c400;--band-ink:#141414;--radius:3px;--ease-out:cubic-bezier(0.16,1,0.3,1);--ground:#0f0f0e;--carton:#1a1a18;--ink:#ecebe6;--ink-2:#a9a69d;--rule:#34332f;--rule-strong:#ecebe6;--alert:#ff5a52;--alert-ink:#141414;--btn:#ecebe6;--btn-ink:#141414;--struck:#8a877f}.ds-tabs{display:flex;gap:4px}.ds-tab{min-height:48px;padding:0 14px;border:1px solid var(--rule);border-radius:var(--radius);background:transparent;color:var(--ink);font-family:\"Archivo\",\"Arial Narrow\",sans-serif;font-size:0.9375rem;font-weight:600;cursor:pointer}.ds-tab:hover{border-color:var(--ink)}.ds-tab[aria-selected=true]{background:var(--ink);color:var(--carton);border-color:var(--ink)}.ds-tab:focus-visible{outline:3px solid var(--band);outline-offset:3px}"
+    },
+    {
+      "name": "Search Field",
+      "kind": "input",
+      "refersTo": "search-input-night",
+      "description": "Filters the month sheet by pharmacy or street; yellow caret.",
+      "html": "<label class=\"ds-search\"><svg viewBox=\"0 0 24 24\" width=\"18\" height=\"18\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.75\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><circle cx=\"11\" cy=\"11\" r=\"6.5\"/><path d=\"m20 20-4.4-4.4\"/></svg><input type=\"search\" placeholder=\"Buscar farmácia ou rua\"></label>",
+      "css": ":host{--band:#f5c400;--band-ink:#141414;--radius:3px;--ease-out:cubic-bezier(0.16,1,0.3,1);--ground:#0f0f0e;--carton:#1a1a18;--ink:#ecebe6;--ink-2:#a9a69d;--rule:#34332f;--rule-strong:#ecebe6;--alert:#ff5a52;--alert-ink:#141414;--btn:#ecebe6;--btn-ink:#141414;--struck:#8a877f}.ds-search{position:relative;display:block;max-width:280px}.ds-search svg{position:absolute;left:12px;top:50%;transform:translateY(-50%);color:var(--ink-2);pointer-events:none}.ds-search input{width:100%;box-sizing:border-box;min-height:44px;padding:0 12px 0 38px;border:1px solid var(--rule);border-radius:var(--radius);background:var(--carton);color:var(--ink);font-family:\"Archivo\",\"Arial Narrow\",sans-serif;font-size:1rem;caret-color:var(--band)}.ds-search input::placeholder{color:var(--ink-2);opacity:1}.ds-search input:hover{border-color:var(--ink-2)}.ds-search input:focus-visible{outline:3px solid var(--band);outline-offset:3px}"
+    },
+    {
+      "name": "Bar",
+      "kind": "nav",
+      "refersTo": "",
+      "description": "Thin top bar: carton mark with yellow band, Jaru clock, link to the month sheet.",
+      "html": "<header class=\"ds-bar\"><a class=\"ds-mark\" href=\"#\"><svg viewBox=\"0 0 28 22\" width=\"28\" height=\"22\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" aria-hidden=\"true\"><rect x=\"1\" y=\"1\" width=\"26\" height=\"20\" rx=\"1.5\"/><rect x=\"1\" y=\"8\" width=\"26\" height=\"6\" fill=\"#f5c400\" stroke=\"none\"/></svg><span>Plantão Jaru</span></a><p class=\"ds-clock\"><time>23:15</time> em Jaru</p><a class=\"ds-link\" href=\"#\">Escala do mês</a></header>",
+      "css": ":host{--band:#f5c400;--band-ink:#141414;--radius:3px;--ease-out:cubic-bezier(0.16,1,0.3,1);--ground:#0f0f0e;--carton:#1a1a18;--ink:#ecebe6;--ink-2:#a9a69d;--rule:#34332f;--rule-strong:#ecebe6;--alert:#ff5a52;--alert-ink:#141414;--btn:#ecebe6;--btn-ink:#141414;--struck:#8a877f}.ds-bar{display:flex;align-items:center;gap:1rem;padding:14px 24px;background:var(--ground);color:var(--ink);font-family:\"Archivo\",\"Arial Narrow\",sans-serif;}.ds-mark{display:inline-flex;align-items:center;gap:10px;color:inherit;text-decoration:none;font-weight:800;font-stretch:75%;font-size:1.25rem;text-transform:uppercase}.ds-clock{margin:0 0 0 auto;color:var(--ink-2);font-size:0.9375rem}.ds-clock time{color:var(--ink);font-weight:600}.ds-link{color:inherit;font-size:0.9375rem;font-weight:600;text-underline-offset:0.2em;text-decoration-thickness:1px}.ds-link:hover{text-decoration-thickness:2px}.ds-mark:focus-visible,.ds-link:focus-visible{outline:3px solid var(--band);outline-offset:3px;border-radius:var(--radius)}"
+    },
+    {
+      "name": "Month Sheet Rows",
+      "kind": "custom",
+      "refersTo": "sheet-row-current",
+      "description": "Ruled schedule rows with state by form: past struck, tonight outlined, current in the yellow band.",
+      "html": "<table class=\"ds-sheet\"><thead><tr><th>Noite</th><th>Farmácia</th><th>Endereço</th></tr></thead><tbody><tr class=\"ds-past\"><td><b>13</b> ter</td><td><b>Farmácia A</b></td><td>Av. Dom Pedro I, 2568</td></tr><tr class=\"ds-current\"><td><b>14</b> qua</td><td><b>Farmácia B</b></td><td>Av. Padre Adolpho Rohl, 1544</td></tr><tr class=\"ds-tonight\"><td><b>15</b> qui</td><td><b>Farmácia C</b></td><td>Av. JK, 1187</td></tr></tbody></table>",
+      "css": ":host{--band:#f5c400;--band-ink:#141414;--radius:3px;--ease-out:cubic-bezier(0.16,1,0.3,1);--ground:#0f0f0e;--carton:#1a1a18;--ink:#ecebe6;--ink-2:#a9a69d;--rule:#34332f;--rule-strong:#ecebe6;--alert:#ff5a52;--alert-ink:#141414;--btn:#ecebe6;--btn-ink:#141414;--struck:#8a877f}.ds-sheet{width:100%;border-collapse:collapse;background:var(--ground);color:var(--ink);font-family:\"Archivo\",\"Arial Narrow\",sans-serif;font-size:0.9375rem;font-variant-numeric:tabular-nums}.ds-sheet th{padding:12px 10px 8px;text-align:left;font-size:0.8125rem;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;color:var(--ink-2);border-bottom:1px solid var(--rule)}.ds-sheet td{padding:10px;border-bottom:1px solid var(--rule)}.ds-sheet b{font-weight:700}.ds-past td{color:var(--struck)}.ds-past b{text-decoration:line-through;text-decoration-thickness:1.5px}.ds-tonight td{box-shadow:inset 0 2px 0 var(--rule-strong),inset 0 -2px 0 var(--rule-strong)}.ds-current td{background:var(--band);color:var(--band-ink);border-bottom-color:var(--band)}"
+    }
+  ],
+  "narrative": {
+    "northStar": "A Caixa de Remédio",
+    "overview": "The page is the printed face of a Brazilian medicine carton. The pharmacy on duty is the product name, set huge in heavy condensed capitals; the address and sector sit beneath it like the active ingredient and strength; the duty window is stamped like a lot and expiry mark. Across the top runs the tarja, the colored band that on a real box classifies the medicine and here classifies the moment: yellow means open now.\n\nThe world has two printings that follow the clock in Jaru (UTC-4): a light carton by day (07:00 to 17:59) and dark ink by night (18:00 to 06:59). Night is the primary printing because that is when people come. Everything else is ink on carton: one family (Archivo) at different widths and weights, hairline rules, square-ish corners, no imagery, no shadows used for lift. State is told by shape before color: a full band for now, an outlined band for tonight, a strike-through for nights that have passed.\n\nDensity is calm and large. The answer occupies the first viewport; supporting lists (the next nights, the month's \"bula\") are tabular, ruled, and quiet.",
+    "keyCharacteristics": [
+      "Carton and ink, two printings switched by Jaru's local hour, never by OS preference.",
+      "One state color: the generic-medicine yellow band. Red only for warning (date outside the schedule, no data).",
+      "Archivo condensed and heavy for names, regular width for prose, tabular numerals everywhere.",
+      "State by form: full band, outlined band, struck through.",
+      "A single printed wipe of the band is the only signature motion."
+    ],
+    "rules": [
+      {
+        "name": "The One Band Rule",
+        "section": "colors",
+        "body": "Yellow means \"open now\" and nothing else carries a fill of it at rest. It appears filled only on the current tarja and the current sheet row; elsewhere only as an interaction response (primary hover, focus ring, selection, caret)."
+      },
+      {
+        "name": "The Red Is a Warning Rule",
+        "section": "colors",
+        "body": "Red is never decorative and never an accent; it fills the tarja only when the page cannot honestly name an open pharmacy."
+      },
+      {
+        "name": "The Clock Theme Rule",
+        "section": "colors",
+        "body": "The printing is chosen by the hour in Jaru before first paint (night from 18:00 to 07:00), not by `prefers-color-scheme`. Both printings must define every neutral token."
+      },
+      {
+        "name": "The Narrow-for-Names Rule",
+        "section": "typography",
+        "body": "Condensed widths (68–88%) are for names, headings, and numerals that must be scanned. Running prose and addresses stay at normal width."
+      },
+      {
+        "name": "The Tabular Rule",
+        "section": "typography",
+        "body": "`font-variant-numeric: tabular-nums` is set on the body; never turn it off for times or dates."
+      },
+      {
+        "name": "The Printed Not Lifted Rule",
+        "section": "elevation",
+        "body": "Nothing floats. If a surface needs to stand apart, change its tone or rule it; never add a drop shadow."
+      }
+    ],
+    "dos": [
+      "**Do** keep the yellow band (`band`) as the only \"open\" signal, always with `band-ink` text.",
+      "**Do** express state by form first: full band for now, 2px outlined band for tonight, struck-through for past.",
+      "**Do** set pharmacy names in Archivo at 68% width, weight 850, uppercase, and let the generic prefix drop to 300.",
+      "**Do** choose the night or day printing from Jaru's hour (18:00–07:00 is night) before first paint, and define every neutral for both.",
+      "**Do** keep tap targets at 44px minimum and buttons at 52px.",
+      "**Do** use 1px hairlines and 2px ink rules for structure, and a 3px radius at most.",
+      "**Do** honor `prefers-reduced-motion` by removing the tarja wipe and theme transitions."
+    ],
+    "donts": [
+      "**Don't** use red anywhere but the warning tarja.",
+      "**Don't** add drop shadows, glows, or gradients for depth; the carton is flat.",
+      "**Don't** bring in a second typeface; widths and weights of Archivo carry the hierarchy.",
+      "**Don't** add motion beyond the single band wipe and the 600ms theme crossfade.",
+      "**Don't** fall back to the category default of a white card with a green cross and a generic list."
+    ]
+  }
+}
